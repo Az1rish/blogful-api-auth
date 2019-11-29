@@ -33,7 +33,7 @@ describe('Comments Endpoints', function() {
       )
     )
 
-    it(`creates an comment, responding with 201 and the new comment`, function() {
+    it(`creates a comment, responding with 201 and the new comment`, function() {
       this.retries(3)
       const testArticle = testArticles[0]
       const testUser = testUsers[0]
@@ -88,7 +88,7 @@ describe('Comments Endpoints', function() {
 
         return supertest(app)
           .post('/api/comments')
-          .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
+          .set('Authorization', helpers.makeAuthHeader(testUser))
           .send(newComment)
           .expect(400, {
             error: `Missing '${field}' in request body`,
