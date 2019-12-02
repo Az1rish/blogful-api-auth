@@ -46,9 +46,14 @@ describe('Protected endpoints', () => {
       method: supertest(app).get,
     },
     {
-        name: 'POST /api/comments',
-        path: '/api/comments',
-        method: supertest(app).post,
+      name: 'POST /api/comments',
+      path: '/api/comments',
+      method: supertest(app).post,
+    },
+    {
+      name: 'POST /api/auth/refresh',
+      path: '/api/auth/refresh',
+      method: supertest(app).post,
     },
   ]
 
